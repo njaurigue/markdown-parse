@@ -15,18 +15,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testFileOne() throws IOException {
-        assertEquals(List.of("Invalid Link", "some-page.html"),
+        assertEquals(List.of("https://something.com", "some-page.html"),
                 MarkdownParse.getLinks(Files.readString(Path.of("./test-file.md"))));
-    }
-
-    @Test(expected = IndexOutOfBoundsException.class)
-    public void testFileTwo() throws IOException {
-        MarkdownParse.getLinks(Files.readString(Path.of("./error-test-file.md")));
-    }
-
-    @Test
-    public void testFileThree() throws IOException {
-        assertEquals(List.of("https://www.minecraft.net/en-us", "image.png"),
-                MarkdownParse.getLinks(Files.readString(Path.of("./test-file-two.md"))));
     }
 }
