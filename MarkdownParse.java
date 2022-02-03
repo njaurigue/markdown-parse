@@ -29,6 +29,10 @@ public class MarkdownParse {
 		        break;
 	        }
 
+            if(nextCloseBracket + 1 != openParen){
+                break;
+            }
+
             if (openParen - nextCloseBracket > 2) {
                 currentIndex = markdown.indexOf("[", currentIndex + 1);
 
@@ -39,6 +43,8 @@ public class MarkdownParse {
                 }
                 continue;
             }
+
+
 
             
 
