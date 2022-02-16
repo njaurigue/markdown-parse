@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-public class MarkdownParseTest2PM {
+public class MarkdownParseTest3PM {
 
     @Test
     public void testFile1() throws IOException {
@@ -46,7 +46,7 @@ public class MarkdownParseTest2PM {
     public void testSpaceAfterParen() {
         String contents = "[title]( space-in-url.com)";
         List<String> expect = List.of("space-in-url.com");
-        assertEquals(expect, MarkdownParse2PM.getLinks(contents));
+        assertEquals(expect, MarkdownParse.getLinks(contents));
     }
     @Test
     public void testSpaceBeforeParen() {
